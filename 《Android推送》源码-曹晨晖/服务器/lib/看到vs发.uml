@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_FYPIcAJ3EeW7Ad1Wp9aXMQ">
+  <name xsi:nil="true"/>
+  <elementImport xmi:id="_FeWXgAJ3EeW7Ad1Wp9aXMQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_FfUn4AJ3EeW7Ad1Wp9aXMQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+  </elementImport>
+  <elementImport xmi:id="_FfXEIAJ3EeW7Ad1Wp9aXMQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+  </elementImport>
+  <elementImport xmi:id="_Fk8HsAJ3EeW7Ad1Wp9aXMQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_FYPvgAJ3EeW7Ad1Wp9aXMQ" name="DBHelper">
+    <packagedElement xmi:type="uml:Class" xmi:id="_FYQWkAJ3EeW7Ad1Wp9aXMQ" name="DBManaer">
+      <ownedAttribute xmi:id="_FeYMsAJ3EeW7Ad1Wp9aXMQ" name="dbUrl" visibility="package" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_FeYMsQJ3EeW7Ad1Wp9aXMQ" value="jdbc:mysql://localhost:3307/androidpn"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_FebQAAJ3EeW7Ad1Wp9aXMQ" name="dbUserName" visibility="package" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_FebQAQJ3EeW7Ad1Wp9aXMQ" value="root"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Fee6YAJ3EeW7Ad1Wp9aXMQ" name="dbPassword" visibility="package" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_Fee6YQJ3EeW7Ad1Wp9aXMQ" value="123456"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_FegvkAJ3EeW7Ad1Wp9aXMQ" name="getDBConnection" visibility="public" isStatic="true">
+        <ownedParameter xmi:id="_FegvkQJ3EeW7Ad1Wp9aXMQ" name="return" type="_Fbi7IgJ3EeW7Ad1Wp9aXMQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FeikwAJ3EeW7Ad1Wp9aXMQ" name="releaseDBConnection" visibility="public" isStatic="true">
+        <ownedParameter xmi:id="_FeikwQJ3EeW7Ad1Wp9aXMQ" name="connection" type="_Fbi7IgJ3EeW7Ad1Wp9aXMQ"/>
+        <ownedParameter xmi:id="_FeikwgJ3EeW7Ad1Wp9aXMQ" name="resultSet" type="_FbjiMQJ3EeW7Ad1Wp9aXMQ"/>
+        <ownedParameter xmi:id="_FeikwwJ3EeW7Ad1Wp9aXMQ" name="statement" type="_FbkJQAJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FekZ8AJ3EeW7Ad1Wp9aXMQ" name="getCurTimeInDate" visibility="public" isStatic="true">
+        <ownedParameter xmi:id="_FekZ8QJ3EeW7Ad1Wp9aXMQ" name="return" type="_FbkJQQJ3EeW7Ad1Wp9aXMQ" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_FYRksAJ3EeW7Ad1Wp9aXMQ" name="Interface">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_FYSLwAJ3EeW7Ad1Wp9aXMQ" name="Pulisher">
+      <ownedOperation xmi:id="_Fem2MAJ3EeW7Ad1Wp9aXMQ" name="addObserver" visibility="public">
+        <ownedParameter xmi:id="_Fem2MQJ3EeW7Ad1Wp9aXMQ" name="observer" type="_FYSy0AJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FendQAJ3EeW7Ad1Wp9aXMQ" name="deleteObserver" visibility="public">
+        <ownedParameter xmi:id="_FendQQJ3EeW7Ad1Wp9aXMQ" name="observer" type="_FYSy0AJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FeoEUAJ3EeW7Ad1Wp9aXMQ" name="notifyAllObserver" visibility="public"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_FYSy0AJ3EeW7Ad1Wp9aXMQ" name="Observer">
+      <ownedOperation xmi:id="_FeorYAJ3EeW7Ad1Wp9aXMQ" name="update" visibility="public"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_FYUA8AJ3EeW7Ad1Wp9aXMQ" name="Server">
+    <packagedElement xmi:type="uml:Class" xmi:id="_FYUoAAJ3EeW7Ad1Wp9aXMQ" name="MyTestHandler">
+      <ownedComment xmi:id="_FYXEQAJ3EeW7Ad1Wp9aXMQ">
+        <body>/** 
+ * sessionhandler&#x7c7b;&#xff0c;&#x4e3b;&#x8981;&#x4efb;&#x52a1;&#x662f;&#x5904;&#x7406;&#x63a5;&#x53d7;&#x5230;&#x7684;&#x5355;&#x4e2a;session&#x53d1;&#x9001;&#x7684;&#x4fe1;&#x606f;&#xff0c;&#x5f53;&#x65b0;&#x7528;&#x6237;&#x8fde;&#x63a5;&#x8fdb;&#x5165;&#x65f6;&#x5b58;&#x50a8;&#x5230;&#x6570;&#x636e;&#x5e93;
+ * @author &#x6668;&#x6656;
+ */
+</body>
+      </ownedComment>
+      <generalization xmi:id="_FeorYQJ3EeW7Ad1Wp9aXMQ" general="_FbnzowJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FerHoAJ3EeW7Ad1Wp9aXMQ" name="loginControler" visibility="private" type="_FYyiEAJ3EeW7Ad1Wp9aXMQ" association="_FnrSoAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FeuyAAJ3EeW7Ad1Wp9aXMQ" name="connectModel" visibility="private" type="_FYvewAJ3EeW7Ad1Wp9aXMQ" association="_FnrSogJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_Fex1UAJ3EeW7Ad1Wp9aXMQ" name="connectControler" visibility="private" type="_FYrNUAJ3EeW7Ad1Wp9aXMQ" association="_FnrSpAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_Fe1fsAJ3EeW7Ad1Wp9aXMQ" name="msgControler" visibility="private" type="_FYp_MAJ3EeW7Ad1Wp9aXMQ" association="_FnrSpgJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedOperation xmi:id="_Fe4jAAJ3EeW7Ad1Wp9aXMQ" name="exceptionCaught" visibility="public">
+        <ownedParameter xmi:id="_Fe4jAQJ3EeW7Ad1Wp9aXMQ" name="session" type="_FboasgJ3EeW7Ad1Wp9aXMQ"/>
+        <ownedParameter xmi:id="_Fe4jAgJ3EeW7Ad1Wp9aXMQ" name="cause" type="_Fe378AJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Fe6YMAJ3EeW7Ad1Wp9aXMQ" name="inputClosed" visibility="public">
+        <ownedParameter xmi:id="_Fe6YMQJ3EeW7Ad1Wp9aXMQ" name="session" type="_FboasgJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Fe9bgAJ3EeW7Ad1Wp9aXMQ" name="messageReceived" visibility="public">
+        <ownedParameter xmi:id="_Fe-CkAJ3EeW7Ad1Wp9aXMQ" name="session" type="_FboasgJ3EeW7Ad1Wp9aXMQ"/>
+        <ownedParameter xmi:id="_Fe-CkQJ3EeW7Ad1Wp9aXMQ" name="message" type="_Fe80cAJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FfAe0AJ3EeW7Ad1Wp9aXMQ" name="messageSent" visibility="public">
+        <ownedParameter xmi:id="_FfAe0QJ3EeW7Ad1Wp9aXMQ" name="session" type="_FboasgJ3EeW7Ad1Wp9aXMQ"/>
+        <ownedParameter xmi:id="_FfAe0gJ3EeW7Ad1Wp9aXMQ" name="message" type="_Fe80cAJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FfCUAAJ3EeW7Ad1Wp9aXMQ" name="sessionClosed" visibility="public">
+        <ownedParameter xmi:id="_FfCUAQJ3EeW7Ad1Wp9aXMQ" name="session" type="_FboasgJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FfEwQAJ3EeW7Ad1Wp9aXMQ" name="sessionCreated" visibility="public">
+        <ownedParameter xmi:id="_FfEwQQJ3EeW7Ad1Wp9aXMQ" name="session" type="_FboasgJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FfHMgAJ3EeW7Ad1Wp9aXMQ" name="sessionIdle" visibility="public">
+        <ownedParameter xmi:id="_FfHMgQJ3EeW7Ad1Wp9aXMQ" name="session" type="_FboasgJ3EeW7Ad1Wp9aXMQ"/>
+        <ownedParameter xmi:id="_FfHMggJ3EeW7Ad1Wp9aXMQ" name="status" type="_FboasQJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FfJowAJ3EeW7Ad1Wp9aXMQ" name="sessionOpened" visibility="public">
+        <ownedParameter xmi:id="_FfJowQJ3EeW7Ad1Wp9aXMQ" name="session" type="_FboasgJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FYXEQQJ3EeW7Ad1Wp9aXMQ" name="MinaTestServer">
+      <ownedComment xmi:id="_FYYSYAJ3EeW7Ad1Wp9aXMQ">
+        <body>/** 
+ * &#x63a8;&#x9001;&#x6838;&#x5fc3;&#x670d;&#x52a1;&#xff0c;&#x8fd0;&#x884c;&#x5728;&#x5355;&#x72ec;&#x7684;&#x4e00;&#x4e2a;&#x7ebf;&#x7a0b;&#x4e2d;&#xff0c;&#x4e3b;&#x8981;&#x8d1f;&#x8d23;&#x4efb;&#x52a1;&#x662f;&#x521d;&#x59cb;&#x5316;&#x914d;&#x7f6e;&#x548c;SessionHandler
+ * @author &#x6668;&#x6656;
+ */
+</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_FfMsEAJ3EeW7Ad1Wp9aXMQ" name="minaTestServer" visibility="private" isStatic="true" type="_FYXEQQJ3EeW7Ad1Wp9aXMQ" association="_Fnr5sAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedOperation xmi:id="_FfN6MAJ3EeW7Ad1Wp9aXMQ" name="getInstance" visibility="public" isStatic="true">
+        <ownedParameter xmi:id="_FfN6MQJ3EeW7Ad1Wp9aXMQ" name="return" type="_FYXEQQJ3EeW7Ad1Wp9aXMQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FfPvYAJ3EeW7Ad1Wp9aXMQ" name="start" visibility="public"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_FnrSoAJ3EeW7Ad1Wp9aXMQ" memberEnd="_FerHoAJ3EeW7Ad1Wp9aXMQ _FnrSoQJ3EeW7Ad1Wp9aXMQ">
+      <ownedEnd xmi:id="_FnrSoQJ3EeW7Ad1Wp9aXMQ" name="MyTestHandler" type="_FYUoAAJ3EeW7Ad1Wp9aXMQ" association="_FnrSoAJ3EeW7Ad1Wp9aXMQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_FnrSogJ3EeW7Ad1Wp9aXMQ" memberEnd="_FeuyAAJ3EeW7Ad1Wp9aXMQ _FnrSowJ3EeW7Ad1Wp9aXMQ">
+      <ownedEnd xmi:id="_FnrSowJ3EeW7Ad1Wp9aXMQ" name="MyTestHandler" type="_FYUoAAJ3EeW7Ad1Wp9aXMQ" association="_FnrSogJ3EeW7Ad1Wp9aXMQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_FnrSpAJ3EeW7Ad1Wp9aXMQ" memberEnd="_Fex1UAJ3EeW7Ad1Wp9aXMQ _FnrSpQJ3EeW7Ad1Wp9aXMQ">
+      <ownedEnd xmi:id="_FnrSpQJ3EeW7Ad1Wp9aXMQ" name="MyTestHandler" type="_FYUoAAJ3EeW7Ad1Wp9aXMQ" association="_FnrSpAJ3EeW7Ad1Wp9aXMQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_FnrSpgJ3EeW7Ad1Wp9aXMQ" memberEnd="_Fe1fsAJ3EeW7Ad1Wp9aXMQ _FnrSpwJ3EeW7Ad1Wp9aXMQ">
+      <ownedEnd xmi:id="_FnrSpwJ3EeW7Ad1Wp9aXMQ" name="MyTestHandler" type="_FYUoAAJ3EeW7Ad1Wp9aXMQ" association="_FnrSpgJ3EeW7Ad1Wp9aXMQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Fnr5sAJ3EeW7Ad1Wp9aXMQ" memberEnd="_FfMsEAJ3EeW7Ad1Wp9aXMQ _Fnr5sQJ3EeW7Ad1Wp9aXMQ">
+      <ownedEnd xmi:id="_Fnr5sQJ3EeW7Ad1Wp9aXMQ" name="MinaTestServer" type="_FYXEQQJ3EeW7Ad1Wp9aXMQ" association="_Fnr5sAJ3EeW7Ad1Wp9aXMQ"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_FYY5cAJ3EeW7Ad1Wp9aXMQ" name="Utils">
+    <packagedElement xmi:type="uml:Class" xmi:id="_FYY5cQJ3EeW7Ad1Wp9aXMQ" name="Utils">
+      <ownedAttribute xmi:id="_FfSLoAJ3EeW7Ad1Wp9aXMQ" name="random" visibility="public" isStatic="true" type="_FbvIYAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedOperation xmi:id="_FfVO8AJ3EeW7Ad1Wp9aXMQ" name="getMD5" visibility="public" isStatic="true">
+        <ownedParameter xmi:id="_FfVO8QJ3EeW7Ad1Wp9aXMQ" name="source">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FfVO8gJ3EeW7Ad1Wp9aXMQ" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FfVO8wJ3EeW7Ad1Wp9aXMQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_FfVO9AJ3EeW7Ad1Wp9aXMQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FfXEIQJ3EeW7Ad1Wp9aXMQ" name="getRandom" visibility="public" isStatic="true">
+        <ownedParameter xmi:id="_FfXEIgJ3EeW7Ad1Wp9aXMQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FfYSQAJ3EeW7Ad1Wp9aXMQ" name="getRandomFileName" visibility="public" isStatic="true">
+        <ownedParameter xmi:id="_FfYSQQJ3EeW7Ad1Wp9aXMQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FfZgYAJ3EeW7Ad1Wp9aXMQ" name="getCurrentTimestamp" visibility="public" isStatic="true">
+        <ownedParameter xmi:id="_FfaHcAJ3EeW7Ad1Wp9aXMQ" name="return" type="_FbkJQQJ3EeW7Ad1Wp9aXMQ" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FYauoAJ3EeW7Ad1Wp9aXMQ" name="Constant">
+      <ownedAttribute xmi:id="_Ffb8oAJ3EeW7Ad1Wp9aXMQ" name="CLIENT_CONN_TIMEOUT" visibility="public" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_Ffb8oQJ3EeW7Ad1Wp9aXMQ" value="10"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_Ffdx0AJ3EeW7Ad1Wp9aXMQ" name="mian" visibility="public"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_FYb8wAJ3EeW7Ad1Wp9aXMQ" name="View">
+    <packagedElement xmi:type="uml:Class" xmi:id="_FYcj0AJ3EeW7Ad1Wp9aXMQ" name="AndroidPn" clientDependency="_Ffe_8AJ3EeW7Ad1Wp9aXMQ">
+      <ownedComment xmi:id="_FYfnIAJ3EeW7Ad1Wp9aXMQ">
+        <body>/** 
+ * @author __USER__
+ */
+</body>
+      </ownedComment>
+      <generalization xmi:id="_FffnAQJ3EeW7Ad1Wp9aXMQ" general="_FffnAAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FfjRYAJ3EeW7Ad1Wp9aXMQ" name="loginControler" visibility="private" type="_FYyiEAJ3EeW7Ad1Wp9aXMQ" association="_Fnr5sgJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_Ffr0QAJ3EeW7Ad1Wp9aXMQ" name="connectModel" visibility="private" type="_FYvewAJ3EeW7Ad1Wp9aXMQ" association="_FnsgwQJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FfzJAAJ3EeW7Ad1Wp9aXMQ" name="connectControler" visibility="private" type="_FYrNUAJ3EeW7Ad1Wp9aXMQ" association="_FnsgwwJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_Ff7r4AJ3EeW7Ad1Wp9aXMQ" name="messageControler" visibility="private" type="_FYp_MAJ3EeW7Ad1Wp9aXMQ" association="_FnsgxQJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FgN_wAJ3EeW7Ad1Wp9aXMQ" name="cb_all_user" visibility="private" type="_Ff_WQAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FgWioAJ3EeW7Ad1Wp9aXMQ" name="jButton1" visibility="private" type="_FgTfUAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FgfFgAJ3EeW7Ad1Wp9aXMQ" name="jButton2" visibility="private" type="_FgTfUAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FgoPcAJ3EeW7Ad1Wp9aXMQ" name="jButton3" visibility="private" type="_FgTfUAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FgyngAJ3EeW7Ad1Wp9aXMQ" name="jLabel1" visibility="private" type="_FgtH8AJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_Fg8_kAJ3EeW7Ad1Wp9aXMQ" name="jLabel2" visibility="private" type="_FgtH8AJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FhFicAJ3EeW7Ad1Wp9aXMQ" name="jLabel3" visibility="private" type="_FgtH8AJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FhM3MAJ3EeW7Ad1Wp9aXMQ" name="jScrollPane1" visibility="private" type="_FhJM0AJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FhUzAAJ3EeW7Ad1Wp9aXMQ" name="jScrollPane2" visibility="private" type="_FhJM0AJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FhcHwAJ3EeW7Ad1Wp9aXMQ" name="jScrollPane3" visibility="private" type="_FhJM0AJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FhjcgAJ3EeW7Ad1Wp9aXMQ" name="jTable1" visibility="private" type="_FhgZMAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FhqKMAJ3EeW7Ad1Wp9aXMQ" name="jTable2" visibility="private" type="_FhgZMAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FhyGAAJ3EeW7Ad1Wp9aXMQ" name="lb_is_online" visibility="private" type="_FgtH8AJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_Fh4zsAJ3EeW7Ad1Wp9aXMQ" name="popupMenu1" visibility="private" type="_Fh1wYAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FiAIcAJ3EeW7Ad1Wp9aXMQ" name="popupMenu2" visibility="private" type="_Fh1wYAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FiIEQAJ3EeW7Ad1Wp9aXMQ" name="popupMenu3" visibility="private" type="_Fh1wYAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FiR1QAJ3EeW7Ad1Wp9aXMQ" name="tp_message_content" visibility="private" type="_FiNj0AJ3EeW7Ad1Wp9aXMQ"/>
+      <interfaceRealization xmi:id="_Ffe_8AJ3EeW7Ad1Wp9aXMQ" name="Observer" supplier="_FYSy0AJ3EeW7Ad1Wp9aXMQ" client="_FYcj0AJ3EeW7Ad1Wp9aXMQ" contract="_FYSy0AJ3EeW7Ad1Wp9aXMQ"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_FYgOMAJ3EeW7Ad1Wp9aXMQ" name="ServerThread" visibility="package">
+        <ownedOperation xmi:id="_Fi5gUAJ3EeW7Ad1Wp9aXMQ" name="run" visibility="public"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_FYj4kAJ3EeW7Ad1Wp9aXMQ" name="CbItemListener" visibility="package">
+        <ownedOperation xmi:id="_Fi9xwAJ3EeW7Ad1Wp9aXMQ" name="itemStateChanged" visibility="public">
+          <ownedParameter xmi:id="_Fi9xwQJ3EeW7Ad1Wp9aXMQ" name="e" type="_Fbw9kgJ3EeW7Ad1Wp9aXMQ"/>
+        </ownedOperation>
+      </nestedClassifier>
+      <ownedOperation xmi:id="_FiWtwAJ3EeW7Ad1Wp9aXMQ" name="initComponents" visibility="private"/>
+      <ownedOperation xmi:id="_FicNUAJ3EeW7Ad1Wp9aXMQ" name="jButton2ActionPerformed" visibility="private">
+        <ownedParameter xmi:id="_FicNUQJ3EeW7Ad1Wp9aXMQ" name="evt" type="_FibmQAJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FigewQJ3EeW7Ad1Wp9aXMQ" name="cb_all_userMouseClicked" visibility="private">
+        <ownedParameter xmi:id="_FigewgJ3EeW7Ad1Wp9aXMQ" name="evt" type="_FigewAJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FikwMAJ3EeW7Ad1Wp9aXMQ" name="jButton3ActionPerformed" visibility="private">
+        <ownedParameter xmi:id="_FikwMQJ3EeW7Ad1Wp9aXMQ" name="evt" type="_FibmQAJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FiqPwAJ3EeW7Ad1Wp9aXMQ" name="jButton1ActionPerformed" visibility="private">
+        <ownedParameter xmi:id="_FiqPwQJ3EeW7Ad1Wp9aXMQ" name="evt" type="_FibmQAJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Fit6IAJ3EeW7Ad1Wp9aXMQ" name="main" visibility="public" isStatic="true">
+        <ownedComment xmi:id="_Fiw9cAJ3EeW7Ad1Wp9aXMQ">
+          <body>/** 
+ * @param argsthe command line arguments
+ */
+</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_Fit6IQJ3EeW7Ad1Wp9aXMQ" name="args">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Fit6IgJ3EeW7Ad1Wp9aXMQ" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Fit6IwJ3EeW7Ad1Wp9aXMQ"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FixkgAJ3EeW7Ad1Wp9aXMQ" name="initView" visibility="private"/>
+      <ownedOperation xmi:id="_Fi1O4AJ3EeW7Ad1Wp9aXMQ" name="update" visibility="public"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Fnr5sgJ3EeW7Ad1Wp9aXMQ" memberEnd="_FfjRYAJ3EeW7Ad1Wp9aXMQ _FnsgwAJ3EeW7Ad1Wp9aXMQ">
+      <ownedEnd xmi:id="_FnsgwAJ3EeW7Ad1Wp9aXMQ" name="AndroidPn" type="_FYcj0AJ3EeW7Ad1Wp9aXMQ" association="_Fnr5sgJ3EeW7Ad1Wp9aXMQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_FnsgwQJ3EeW7Ad1Wp9aXMQ" memberEnd="_Ffr0QAJ3EeW7Ad1Wp9aXMQ _FnsgwgJ3EeW7Ad1Wp9aXMQ">
+      <ownedEnd xmi:id="_FnsgwgJ3EeW7Ad1Wp9aXMQ" name="AndroidPn" type="_FYcj0AJ3EeW7Ad1Wp9aXMQ" association="_FnsgwQJ3EeW7Ad1Wp9aXMQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_FnsgwwJ3EeW7Ad1Wp9aXMQ" memberEnd="_FfzJAAJ3EeW7Ad1Wp9aXMQ _FnsgxAJ3EeW7Ad1Wp9aXMQ">
+      <ownedEnd xmi:id="_FnsgxAJ3EeW7Ad1Wp9aXMQ" name="AndroidPn" type="_FYcj0AJ3EeW7Ad1Wp9aXMQ" association="_FnsgwwJ3EeW7Ad1Wp9aXMQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_FnsgxQJ3EeW7Ad1Wp9aXMQ" memberEnd="_Ff7r4AJ3EeW7Ad1Wp9aXMQ _FnsgxgJ3EeW7Ad1Wp9aXMQ">
+      <ownedEnd xmi:id="_FnsgxgJ3EeW7Ad1Wp9aXMQ" name="AndroidPn" type="_FYcj0AJ3EeW7Ad1Wp9aXMQ" association="_FnsgxQJ3EeW7Ad1Wp9aXMQ"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_FYni8AJ3EeW7Ad1Wp9aXMQ" name="ViewModel">
+    <packagedElement xmi:type="uml:Class" xmi:id="_FYoKAAJ3EeW7Ad1Wp9aXMQ" name="AllConnectorCombleBoxModel">
+      <generalization xmi:id="_FjEfcQJ3EeW7Ad1Wp9aXMQ" general="_FjEfcAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FjG7sAJ3EeW7Ad1Wp9aXMQ" name="userList" visibility="package" type="_FjFGgAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FjIw4AJ3EeW7Ad1Wp9aXMQ" name="seleConn" visibility="package" type="_FY0-UAJ3EeW7Ad1Wp9aXMQ" association="_FntH0AJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedOperation xmi:id="_FjJ_AAJ3EeW7Ad1Wp9aXMQ" name="getSize" visibility="public">
+        <ownedParameter xmi:id="_FjJ_AQJ3EeW7Ad1Wp9aXMQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FjLNIAJ3EeW7Ad1Wp9aXMQ" name="getElementAt" visibility="public">
+        <ownedParameter xmi:id="_FjLNIQJ3EeW7Ad1Wp9aXMQ" name="index">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_FjLNIgJ3EeW7Ad1Wp9aXMQ" name="return" type="_Fe80cAJ3EeW7Ad1Wp9aXMQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FjMbQAJ3EeW7Ad1Wp9aXMQ" name="addListDataListener" visibility="public">
+        <ownedParameter xmi:id="_FjMbQQJ3EeW7Ad1Wp9aXMQ" name="l" type="_FbzZ0AJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FjNpYAJ3EeW7Ad1Wp9aXMQ" name="removeListDataListener" visibility="public">
+        <ownedParameter xmi:id="_FjNpYQJ3EeW7Ad1Wp9aXMQ" name="l" type="_FbzZ0AJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FjO3gAJ3EeW7Ad1Wp9aXMQ" name="setSelectedItem" visibility="public">
+        <ownedParameter xmi:id="_FjO3gQJ3EeW7Ad1Wp9aXMQ" name="anItem" type="_Fe80cAJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FjQFoAJ3EeW7Ad1Wp9aXMQ" name="getSelectedItem" visibility="public">
+        <ownedParameter xmi:id="_FjQFoQJ3EeW7Ad1Wp9aXMQ" name="return" type="_Fe80cAJ3EeW7Ad1Wp9aXMQ" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_FntH0AJ3EeW7Ad1Wp9aXMQ" memberEnd="_FjIw4AJ3EeW7Ad1Wp9aXMQ _FntH0QJ3EeW7Ad1Wp9aXMQ">
+      <ownedEnd xmi:id="_FntH0QJ3EeW7Ad1Wp9aXMQ" name="AllConnectorCombleBoxModel" type="_FYoKAAJ3EeW7Ad1Wp9aXMQ" association="_FntH0AJ3EeW7Ad1Wp9aXMQ"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_FYpYIAJ3EeW7Ad1Wp9aXMQ" name="controler">
+    <packagedElement xmi:type="uml:Class" xmi:id="_FYp_MAJ3EeW7Ad1Wp9aXMQ" name="EXMessageControler">
+      <ownedAttribute xmi:id="_FjR60AJ3EeW7Ad1Wp9aXMQ" name="connectModel" visibility="private" type="_FYvewAJ3EeW7Ad1Wp9aXMQ" association="_FntH0gJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FjTwAAJ3EeW7Ad1Wp9aXMQ" name="messageControler" visibility="private" type="_FYxT8AJ3EeW7Ad1Wp9aXMQ" association="_Fntu4AJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedOperation xmi:id="_FjU-IAJ3EeW7Ad1Wp9aXMQ" name="sendMsgToOneConnector" visibility="public">
+        <ownedParameter xmi:id="_FjU-IQJ3EeW7Ad1Wp9aXMQ" name="uuid">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_FjU-IgJ3EeW7Ad1Wp9aXMQ" name="msgText">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FjWMQAJ3EeW7Ad1Wp9aXMQ" name="sendMsagToAllConnector" visibility="public">
+        <ownedParameter xmi:id="_FjWMQQJ3EeW7Ad1Wp9aXMQ" name="msgText">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FjXaYAJ3EeW7Ad1Wp9aXMQ" name="sendUnRecieveMsg" visibility="public">
+        <ownedParameter xmi:id="_FjXaYQJ3EeW7Ad1Wp9aXMQ" name="connector" type="_FY0-UAJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FYrNUAJ3EeW7Ad1Wp9aXMQ" name="ConnectControler">
+      <ownedAttribute xmi:id="_FjZPkAJ3EeW7Ad1Wp9aXMQ" name="connectModel" visibility="private" type="_FYvewAJ3EeW7Ad1Wp9aXMQ" association="_Fntu4gJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FjbEwAJ3EeW7Ad1Wp9aXMQ" name="messageControler" visibility="private" type="_FYp_MAJ3EeW7Ad1Wp9aXMQ" association="_Fntu5AJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedOperation xmi:id="_Fjc58AJ3EeW7Ad1Wp9aXMQ" name="disconnectOneConnector" visibility="public">
+        <ownedParameter xmi:id="_Fjc58QJ3EeW7Ad1Wp9aXMQ" name="uuid">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FjeIEAJ3EeW7Ad1Wp9aXMQ" name="reconnectOneConnector" visibility="public">
+        <ownedParameter xmi:id="_FjeIEQJ3EeW7Ad1Wp9aXMQ" name="uuid">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_FjeIEgJ3EeW7Ad1Wp9aXMQ" name="session" type="_FboasgJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FjfWMAJ3EeW7Ad1Wp9aXMQ" name="createNewConnector" visibility="public">
+        <ownedParameter xmi:id="_FjfWMQJ3EeW7Ad1Wp9aXMQ" name="uuid">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_FjfWMgJ3EeW7Ad1Wp9aXMQ" name="session" type="_FboasgJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_FntH0gJ3EeW7Ad1Wp9aXMQ" memberEnd="_FjR60AJ3EeW7Ad1Wp9aXMQ _FntH0wJ3EeW7Ad1Wp9aXMQ">
+      <ownedEnd xmi:id="_FntH0wJ3EeW7Ad1Wp9aXMQ" name="EXMessageControler" type="_FYp_MAJ3EeW7Ad1Wp9aXMQ" association="_FntH0gJ3EeW7Ad1Wp9aXMQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Fntu4AJ3EeW7Ad1Wp9aXMQ" memberEnd="_FjTwAAJ3EeW7Ad1Wp9aXMQ _Fntu4QJ3EeW7Ad1Wp9aXMQ">
+      <ownedEnd xmi:id="_Fntu4QJ3EeW7Ad1Wp9aXMQ" name="EXMessageControler" type="_FYp_MAJ3EeW7Ad1Wp9aXMQ" association="_Fntu4AJ3EeW7Ad1Wp9aXMQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Fntu4gJ3EeW7Ad1Wp9aXMQ" memberEnd="_FjZPkAJ3EeW7Ad1Wp9aXMQ _Fntu4wJ3EeW7Ad1Wp9aXMQ">
+      <ownedEnd xmi:id="_Fntu4wJ3EeW7Ad1Wp9aXMQ" name="ConnectControler" type="_FYrNUAJ3EeW7Ad1Wp9aXMQ" association="_Fntu4gJ3EeW7Ad1Wp9aXMQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Fntu5AJ3EeW7Ad1Wp9aXMQ" memberEnd="_FjbEwAJ3EeW7Ad1Wp9aXMQ _Fntu5QJ3EeW7Ad1Wp9aXMQ">
+      <ownedEnd xmi:id="_Fntu5QJ3EeW7Ad1Wp9aXMQ" name="ConnectControler" type="_FYrNUAJ3EeW7Ad1Wp9aXMQ" association="_Fntu5AJ3EeW7Ad1Wp9aXMQ"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_FYsbcAJ3EeW7Ad1Wp9aXMQ" name="model">
+    <packagedElement xmi:type="uml:Class" xmi:id="_FYtCgAJ3EeW7Ad1Wp9aXMQ" name="Message">
+      <ownedAttribute xmi:id="_FjhycAJ3EeW7Ad1Wp9aXMQ" name="message" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_FjjAkAJ3EeW7Ad1Wp9aXMQ" name="uuid" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_FjkOsAJ3EeW7Ad1Wp9aXMQ" name="sendTime" visibility="private" type="_FbkJQQJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedOperation xmi:id="_Fjk1wAJ3EeW7Ad1Wp9aXMQ" name="getMessage" visibility="public">
+        <ownedParameter xmi:id="_Fjk1wQJ3EeW7Ad1Wp9aXMQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FjmD4AJ3EeW7Ad1Wp9aXMQ" name="setMessage" visibility="public">
+        <ownedParameter xmi:id="_FjmD4QJ3EeW7Ad1Wp9aXMQ" name="message">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Fjmq8AJ3EeW7Ad1Wp9aXMQ" name="getUuid" visibility="public">
+        <ownedParameter xmi:id="_Fjmq8QJ3EeW7Ad1Wp9aXMQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Fjn5EAJ3EeW7Ad1Wp9aXMQ" name="setUuid" visibility="public">
+        <ownedParameter xmi:id="_Fjn5EQJ3EeW7Ad1Wp9aXMQ" name="uuid">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FjpHMAJ3EeW7Ad1Wp9aXMQ" name="getSendTime" visibility="public">
+        <ownedParameter xmi:id="_FjpHMQJ3EeW7Ad1Wp9aXMQ" name="return" type="_FbkJQQJ3EeW7Ad1Wp9aXMQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FjqVUAJ3EeW7Ad1Wp9aXMQ" name="setSendTime" visibility="public">
+        <ownedParameter xmi:id="_FjqVUQJ3EeW7Ad1Wp9aXMQ" name="sendTime" type="_FbkJQQJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FYuQoAJ3EeW7Ad1Wp9aXMQ" name="User">
+      <ownedAttribute xmi:id="_FjrjcAJ3EeW7Ad1Wp9aXMQ" name="uuid" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_FjtYoAJ3EeW7Ad1Wp9aXMQ" name="name" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_FjumwAJ3EeW7Ad1Wp9aXMQ" name="createTime" visibility="private" type="_FbkJQQJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_Fjwb8AJ3EeW7Ad1Wp9aXMQ" name="lastConnTime" visibility="private" type="_FbkJQQJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedOperation xmi:id="_FjxqEAJ3EeW7Ad1Wp9aXMQ" name="getUuid" visibility="public">
+        <ownedParameter xmi:id="_FjxqEQJ3EeW7Ad1Wp9aXMQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FjyRIAJ3EeW7Ad1Wp9aXMQ" name="setUuid" visibility="public">
+        <ownedParameter xmi:id="_FjyRIQJ3EeW7Ad1Wp9aXMQ" name="uuid">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FjzfQAJ3EeW7Ad1Wp9aXMQ" name="getName" visibility="public">
+        <ownedParameter xmi:id="_FjzfQQJ3EeW7Ad1Wp9aXMQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Fj0tYAJ3EeW7Ad1Wp9aXMQ" name="setName" visibility="public">
+        <ownedParameter xmi:id="_Fj0tYQJ3EeW7Ad1Wp9aXMQ" name="name">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Fj17gAJ3EeW7Ad1Wp9aXMQ" name="getCreateTime" visibility="public">
+        <ownedParameter xmi:id="_Fj17gQJ3EeW7Ad1Wp9aXMQ" name="return" type="_FbkJQQJ3EeW7Ad1Wp9aXMQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Fj3wsAJ3EeW7Ad1Wp9aXMQ" name="setCreateTime" visibility="public">
+        <ownedParameter xmi:id="_Fj3wsQJ3EeW7Ad1Wp9aXMQ" name="createTime" type="_FbkJQQJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Fj4-0AJ3EeW7Ad1Wp9aXMQ" name="getLastConnTime" visibility="public">
+        <ownedParameter xmi:id="_Fj4-0QJ3EeW7Ad1Wp9aXMQ" name="return" type="_FbkJQQJ3EeW7Ad1Wp9aXMQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Fj60AAJ3EeW7Ad1Wp9aXMQ" name="setLastConnTime" visibility="public">
+        <ownedParameter xmi:id="_Fj60AQJ3EeW7Ad1Wp9aXMQ" name="lastConnTime" type="_FbkJQQJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FYvewAJ3EeW7Ad1Wp9aXMQ" name="ConnectModel" clientDependency="_Fj7bEAJ3EeW7Ad1Wp9aXMQ">
+      <ownedAttribute xmi:id="_Fj9QQAJ3EeW7Ad1Wp9aXMQ" name="connectorList" visibility="private" type="_FjFGgAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_Fj_sgAJ3EeW7Ad1Wp9aXMQ" name="connectModel" visibility="private" isStatic="true" type="_FYvewAJ3EeW7Ad1Wp9aXMQ" association="_FnuV8AJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FkCIwAJ3EeW7Ad1Wp9aXMQ" name="observerList" visibility="private" type="_FkA6oAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FkFMEAJ3EeW7Ad1Wp9aXMQ" name="loginControler" visibility="private" type="_FYyiEAJ3EeW7Ad1Wp9aXMQ" association="_FnuV8gJ3EeW7Ad1Wp9aXMQ"/>
+      <interfaceRealization xmi:id="_Fj7bEAJ3EeW7Ad1Wp9aXMQ" name="Pulisher" supplier="_FYSLwAJ3EeW7Ad1Wp9aXMQ" client="_FYvewAJ3EeW7Ad1Wp9aXMQ" contract="_FYSLwAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedOperation xmi:id="_FkGaMAJ3EeW7Ad1Wp9aXMQ" name="getInstance" visibility="public" isStatic="true">
+        <ownedParameter xmi:id="_FkGaMQJ3EeW7Ad1Wp9aXMQ" name="return" type="_FYvewAJ3EeW7Ad1Wp9aXMQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FkIPYAJ3EeW7Ad1Wp9aXMQ" name="addConnector" visibility="public">
+        <ownedParameter xmi:id="_FkIPYQJ3EeW7Ad1Wp9aXMQ" name="connector" type="_FY0-UAJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FkJdgAJ3EeW7Ad1Wp9aXMQ" name="getAllConnectorFromDB" visibility="public"/>
+      <ownedOperation xmi:id="_FkLSsAJ3EeW7Ad1Wp9aXMQ" name="updateConnectTime" visibility="public">
+        <ownedParameter xmi:id="_FkLSsQJ3EeW7Ad1Wp9aXMQ" name="conn" type="_FY0-UAJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FkNH4AJ3EeW7Ad1Wp9aXMQ" name="removeConnector" visibility="public">
+        <ownedParameter xmi:id="_FkNH4QJ3EeW7Ad1Wp9aXMQ" name="uuid">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FkO9EAJ3EeW7Ad1Wp9aXMQ" name="testPushMsg" visibility="public"/>
+      <ownedOperation xmi:id="_FkQLMAJ3EeW7Ad1Wp9aXMQ" name="findConnectByUuid" visibility="public">
+        <ownedParameter xmi:id="_FkQLMQJ3EeW7Ad1Wp9aXMQ" name="uuid">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_FkQLMgJ3EeW7Ad1Wp9aXMQ" name="return" type="_FY0-UAJ3EeW7Ad1Wp9aXMQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FkSAYAJ3EeW7Ad1Wp9aXMQ" name="getAllConnector" visibility="public">
+        <ownedParameter xmi:id="_FkSncAJ3EeW7Ad1Wp9aXMQ" name="return" type="_Fbl-cAJ3EeW7Ad1Wp9aXMQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FkT1kAJ3EeW7Ad1Wp9aXMQ" name="getAllConnectorUuidArr" visibility="public">
+        <ownedParameter xmi:id="_FkT1kQJ3EeW7Ad1Wp9aXMQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FkWR0AJ3EeW7Ad1Wp9aXMQ" name="addObserver" visibility="public">
+        <ownedParameter xmi:id="_FkWR0QJ3EeW7Ad1Wp9aXMQ" name="observer" type="_FYSy0AJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FkYHAAJ3EeW7Ad1Wp9aXMQ" name="deleteObserver" visibility="public">
+        <ownedParameter xmi:id="_FkYHAQJ3EeW7Ad1Wp9aXMQ" name="observer" type="_FYSy0AJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FkZ8MAJ3EeW7Ad1Wp9aXMQ" name="notifyAllObserver" visibility="public"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FYxT8AJ3EeW7Ad1Wp9aXMQ" name="MessageControler">
+      <ownedAttribute xmi:id="_FkcYcAJ3EeW7Ad1Wp9aXMQ" name="ADD_MESSAGE" visibility="public" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_FkcYcQJ3EeW7Ad1Wp9aXMQ" value="insert into send_message_tb (message,send_uuid,send_time) VALUES ('%s','%s','%s');"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_FkeNoAJ3EeW7Ad1Wp9aXMQ" name="FIND_MESSAGE_AFTER_TIME" visibility="public" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_FkeNoQJ3EeW7Ad1Wp9aXMQ" value="SELECT * FROM send_message_tb where send_time > '%s' and send_uuid='ALL' or send_uuid='%s'  ORDER BY send_time DESC;"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_FkgC0AJ3EeW7Ad1Wp9aXMQ" name="addMessage" visibility="public" isStatic="true">
+        <ownedParameter xmi:id="_FkgC0QJ3EeW7Ad1Wp9aXMQ" name="message" type="_FYtCgAJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FkhQ8AJ3EeW7Ad1Wp9aXMQ" name="getMessageAfterTime" visibility="public" isStatic="true">
+        <ownedParameter xmi:id="_FkhQ8QJ3EeW7Ad1Wp9aXMQ" name="time">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_FkhQ8gJ3EeW7Ad1Wp9aXMQ" name="uuid">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_FkhQ8wJ3EeW7Ad1Wp9aXMQ" name="return" type="_Fbl-cAJ3EeW7Ad1Wp9aXMQ" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FYyiEAJ3EeW7Ad1Wp9aXMQ" name="LoginControler" clientDependency="_FkifEAJ3EeW7Ad1Wp9aXMQ">
+      <ownedComment xmi:id="_FY0XQAJ3EeW7Ad1Wp9aXMQ">
+        <body>/** 
+ * &#x7528;&#x6237;&#x8fde;&#x63a5;model&#xff0c;&#x5305;&#x62ec;&#x64cd;&#x4f5c;&#x6dfb;&#x52a0;&#x65b0;session&#xff0c;&#x83b7;&#x53d6;&#x5f53;&#x524d;&#x6240;&#x6709;session&#xff0c;&#x66f4;&#x65b0;session&#x65f6;&#x95f4;&#xff0c;&#x5bfb;&#x627e;session
+ * @author &#x6668;&#x6656;
+ */
+</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_FkkUQAJ3EeW7Ad1Wp9aXMQ" name="ADD_NEW_USER" visibility="public" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_FkkUQQJ3EeW7Ad1Wp9aXMQ" value="INSERT INTO users (uuid,username,create_time,last_connect_time)VALUES('%s', '%s', '%s', '%s')"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_FknXkAJ3EeW7Ad1Wp9aXMQ" name="SREACH_USER_BY_UUID" visibility="public" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_FknXkQJ3EeW7Ad1Wp9aXMQ" value="select * from users where uuid = '%s';"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_FkrB8AJ3EeW7Ad1Wp9aXMQ" name="UPDATE_USER_CONN_TIME" visibility="public" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_FkrB8QJ3EeW7Ad1Wp9aXMQ" value="UPDATE users SET last_connect_time = '%s' where uuid = '%s';"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_FkuFQAJ3EeW7Ad1Wp9aXMQ" name="GET_ALL_USER" visibility="public" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_FkuFQQJ3EeW7Ad1Wp9aXMQ" value="select * from users;"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_FkxIkAJ3EeW7Ad1Wp9aXMQ" name="observers" visibility="private" type="_FkA6oAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_Fk0L4AJ3EeW7Ad1Wp9aXMQ" name="controler" visibility="private" isStatic="true" type="_FYyiEAJ3EeW7Ad1Wp9aXMQ" association="_Fnu9AAJ3EeW7Ad1Wp9aXMQ"/>
+      <interfaceRealization xmi:id="_FkifEAJ3EeW7Ad1Wp9aXMQ" name="Pulisher" supplier="_FYSLwAJ3EeW7Ad1Wp9aXMQ" client="_FYyiEAJ3EeW7Ad1Wp9aXMQ" contract="_FYSLwAJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedOperation xmi:id="_Fk2BEAJ3EeW7Ad1Wp9aXMQ" name="getInstance" visibility="public" isStatic="true">
+        <ownedParameter xmi:id="_Fk2BEQJ3EeW7Ad1Wp9aXMQ" name="return" type="_FYyiEAJ3EeW7Ad1Wp9aXMQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Fk4dUAJ3EeW7Ad1Wp9aXMQ" name="addNewConnector" visibility="public">
+        <ownedParameter xmi:id="_Fk4dUQJ3EeW7Ad1Wp9aXMQ" name="connector" type="_FY0-UAJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Fk5rcAJ3EeW7Ad1Wp9aXMQ" name="getAllConnector" visibility="public">
+        <ownedParameter xmi:id="_Fk5rcQJ3EeW7Ad1Wp9aXMQ" name="return" type="_Fbl-cAJ3EeW7Ad1Wp9aXMQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Fk8HsQJ3EeW7Ad1Wp9aXMQ" name="updateSessionConnTime" visibility="public">
+        <ownedParameter xmi:id="_Fk8HsgJ3EeW7Ad1Wp9aXMQ" name="connector" type="_FY0-UAJ3EeW7Ad1Wp9aXMQ"/>
+        <ownedParameter xmi:id="_Fk8HswJ3EeW7Ad1Wp9aXMQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Fk984AJ3EeW7Ad1Wp9aXMQ" name="addObserver" visibility="public">
+        <ownedParameter xmi:id="_Fk-j8AJ3EeW7Ad1Wp9aXMQ" name="observer" type="_FYSy0AJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FlAZIAJ3EeW7Ad1Wp9aXMQ" name="deleteObserver" visibility="public">
+        <ownedParameter xmi:id="_FlAZIQJ3EeW7Ad1Wp9aXMQ" name="observer" type="_FYSy0AJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FlCOUAJ3EeW7Ad1Wp9aXMQ" name="notifyAllObserver" visibility="public"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FY0-UAJ3EeW7Ad1Wp9aXMQ" name="Connector">
+      <ownedAttribute xmi:id="_FlEqkAJ3EeW7Ad1Wp9aXMQ" name="uuid" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_FlF4sAJ3EeW7Ad1Wp9aXMQ" name="name" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_FlHt4AJ3EeW7Ad1Wp9aXMQ" name="createTime" visibility="private" type="_FbkJQQJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FlI8AAJ3EeW7Ad1Wp9aXMQ" name="lastConnTime" visibility="private" type="_FbkJQQJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedAttribute xmi:id="_FlKxMAJ3EeW7Ad1Wp9aXMQ" name="isOnline" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_FlL_UAJ3EeW7Ad1Wp9aXMQ" name="ioSession" visibility="private" type="_FboasgJ3EeW7Ad1Wp9aXMQ"/>
+      <ownedOperation xmi:id="_FlNNcAJ3EeW7Ad1Wp9aXMQ" name="getUuid" visibility="public">
+        <ownedParameter xmi:id="_FlNNcQJ3EeW7Ad1Wp9aXMQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FlObkAJ3EeW7Ad1Wp9aXMQ" name="setUuid" visibility="public">
+        <ownedParameter xmi:id="_FlObkQJ3EeW7Ad1Wp9aXMQ" name="uuid">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FlPpsAJ3EeW7Ad1Wp9aXMQ" name="getName" visibility="public">
+        <ownedParameter xmi:id="_FlPpsQJ3EeW7Ad1Wp9aXMQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FlQ30AJ3EeW7Ad1Wp9aXMQ" name="setName" visibility="public">
+        <ownedParameter xmi:id="_FlQ30QJ3EeW7Ad1Wp9aXMQ" name="name">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FlSF8AJ3EeW7Ad1Wp9aXMQ" name="getCreateTime" visibility="public">
+        <ownedParameter xmi:id="_FlSF8QJ3EeW7Ad1Wp9aXMQ" name="return" type="_FbkJQQJ3EeW7Ad1Wp9aXMQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FlTUEAJ3EeW7Ad1Wp9aXMQ" name="setCreateTime" visibility="public">
+        <ownedParameter xmi:id="_FlTUEQJ3EeW7Ad1Wp9aXMQ" name="createTime" type="_FbkJQQJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FlT7IAJ3EeW7Ad1Wp9aXMQ" name="getLastConnTime" visibility="public">
+        <ownedParameter xmi:id="_FlT7IQJ3EeW7Ad1Wp9aXMQ" name="return" type="_FbkJQQJ3EeW7Ad1Wp9aXMQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FlVwUAJ3EeW7Ad1Wp9aXMQ" name="setLastConnTime" visibility="public">
+        <ownedParameter xmi:id="_FlVwUQJ3EeW7Ad1Wp9aXMQ" name="lastConnTime" type="_FbkJQQJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FlW-cAJ3EeW7Ad1Wp9aXMQ" name="isOnline" visibility="public">
+        <ownedParameter xmi:id="_FlW-cQJ3EeW7Ad1Wp9aXMQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FlYMkAJ3EeW7Ad1Wp9aXMQ" name="setOnline" visibility="public">
+        <ownedParameter xmi:id="_FlYMkQJ3EeW7Ad1Wp9aXMQ" name="isOnline">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FlZasAJ3EeW7Ad1Wp9aXMQ" name="getIoSession" visibility="public">
+        <ownedParameter xmi:id="_FlZasQJ3EeW7Ad1Wp9aXMQ" name="return" type="_FboasgJ3EeW7Ad1Wp9aXMQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FlbP4AJ3EeW7Ad1Wp9aXMQ" name="setIoSession" visibility="public">
+        <ownedParameter xmi:id="_FlbP4QJ3EeW7Ad1Wp9aXMQ" name="ioSession" type="_FboasgJ3EeW7Ad1Wp9aXMQ"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_FnuV8AJ3EeW7Ad1Wp9aXMQ" memberEnd="_Fj_sgAJ3EeW7Ad1Wp9aXMQ _FnuV8QJ3EeW7Ad1Wp9aXMQ">
+      <ownedEnd xmi:id="_FnuV8QJ3EeW7Ad1Wp9aXMQ" name="ConnectModel" type="_FYvewAJ3EeW7Ad1Wp9aXMQ" association="_FnuV8AJ3EeW7Ad1Wp9aXMQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_FnuV8gJ3EeW7Ad1Wp9aXMQ" memberEnd="_FkFMEAJ3EeW7Ad1Wp9aXMQ _FnuV8wJ3EeW7Ad1Wp9aXMQ">
+      <ownedEnd xmi:id="_FnuV8wJ3EeW7Ad1Wp9aXMQ" name="ConnectModel" type="_FYvewAJ3EeW7Ad1Wp9aXMQ" association="_FnuV8gJ3EeW7Ad1Wp9aXMQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Fnu9AAJ3EeW7Ad1Wp9aXMQ" memberEnd="_Fk0L4AJ3EeW7Ad1Wp9aXMQ _Fnu9AQJ3EeW7Ad1Wp9aXMQ">
+      <ownedEnd xmi:id="_Fnu9AQJ3EeW7Ad1Wp9aXMQ" name="LoginControler" type="_FYyiEAJ3EeW7Ad1Wp9aXMQ" association="_Fnu9AAJ3EeW7Ad1Wp9aXMQ"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_Fbi7IAJ3EeW7Ad1Wp9aXMQ" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_Fbi7IQJ3EeW7Ad1Wp9aXMQ" name="sql">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_Fbi7IgJ3EeW7Ad1Wp9aXMQ" name="Connection"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FbjiMAJ3EeW7Ad1Wp9aXMQ" name="DriverManager"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FbjiMQJ3EeW7Ad1Wp9aXMQ" name="ResultSet"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FbjiMgJ3EeW7Ad1Wp9aXMQ" name="SQLException"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FbkJQAJ3EeW7Ad1Wp9aXMQ" name="Statement"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FbkJQQJ3EeW7Ad1Wp9aXMQ" name="Timestamp"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_FbkJQgJ3EeW7Ad1Wp9aXMQ" name="text">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FbkJQwJ3EeW7Ad1Wp9aXMQ" name="SimpleDateFormat"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_FbkwUAJ3EeW7Ad1Wp9aXMQ" name="util">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FbkwUQJ3EeW7Ad1Wp9aXMQ" name="Date"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_Fbl-cAJ3EeW7Ad1Wp9aXMQ" name="ArrayList"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_Fbl-cQJ3EeW7Ad1Wp9aXMQ" name="UUID"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_Fbq28AJ3EeW7Ad1Wp9aXMQ" name="Map"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FbvIYAJ3EeW7Ad1Wp9aXMQ" name="Random"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FbvvcAJ3EeW7Ad1Wp9aXMQ" name="HashMap"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FbvvcQJ3EeW7Ad1Wp9aXMQ" name="Iterator"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_FbwWgAJ3EeW7Ad1Wp9aXMQ" name="Map">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_FbwWgQJ3EeW7Ad1Wp9aXMQ" name="Entry"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_Fb3EMAJ3EeW7Ad1Wp9aXMQ" name="Vector"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_FblXYAJ3EeW7Ad1Wp9aXMQ" name="io">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FblXYQJ3EeW7Ad1Wp9aXMQ" name="IOException"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FbpBwAJ3EeW7Ad1Wp9aXMQ" name="BufferedReader"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_Fbpo0AJ3EeW7Ad1Wp9aXMQ" name="InputStreamReader"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Fbpo0QJ3EeW7Ad1Wp9aXMQ" name="net">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_Fbpo0gJ3EeW7Ad1Wp9aXMQ" name="InetSocketAddress"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_Fb45YAJ3EeW7Ad1Wp9aXMQ" name="ConnectException"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Fbpo0wJ3EeW7Ad1Wp9aXMQ" name="nio">
+      <packagedElement xmi:type="uml:Package" xmi:id="_FbqP4AJ3EeW7Ad1Wp9aXMQ" name="charset">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_FbqP4QJ3EeW7Ad1Wp9aXMQ" name="Charset"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Fbw9kAJ3EeW7Ad1Wp9aXMQ" name="awt">
+      <packagedElement xmi:type="uml:Package" xmi:id="_Fbw9kQJ3EeW7Ad1Wp9aXMQ" name="event">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_Fbw9kgJ3EeW7Ad1Wp9aXMQ" name="ItemEvent"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_Fbw9kwJ3EeW7Ad1Wp9aXMQ" name="ItemListener"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_FibmQAJ3EeW7Ad1Wp9aXMQ" name="ActionEvent"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_FigewAJ3EeW7Ad1Wp9aXMQ" name="MouseEvent"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_Fh1wYAJ3EeW7Ad1Wp9aXMQ" name="PopupMenu"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_Fbl-cgJ3EeW7Ad1Wp9aXMQ" name="javassist">
+    <packagedElement xmi:type="uml:Package" xmi:id="_Fbl-cwJ3EeW7Ad1Wp9aXMQ" name="expr">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FbmlgAJ3EeW7Ad1Wp9aXMQ" name="Instanceof"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_FbmlgQJ3EeW7Ad1Wp9aXMQ" name="javax">
+    <packagedElement xmi:type="uml:Package" xmi:id="_FbmlggJ3EeW7Ad1Wp9aXMQ" name="enterprise">
+      <packagedElement xmi:type="uml:Package" xmi:id="_FbmlgwJ3EeW7Ad1Wp9aXMQ" name="inject">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_FbnMkAJ3EeW7Ad1Wp9aXMQ" name="Instance"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Fbq28QJ3EeW7Ad1Wp9aXMQ" name="jms">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_Fbq28gJ3EeW7Ad1Wp9aXMQ" name="Session"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_FbxkoAJ3EeW7Ad1Wp9aXMQ" name="swing">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FbxkoQJ3EeW7Ad1Wp9aXMQ" name="DefaultComboBoxModel"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FbyLsAJ3EeW7Ad1Wp9aXMQ" name="*"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_FbyywAJ3EeW7Ad1Wp9aXMQ" name="event">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_FbzZ0AJ3EeW7Ad1Wp9aXMQ" name="ListDataListener"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FffnAAJ3EeW7Ad1Wp9aXMQ" name="JFrame"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_Ff_WQAJ3EeW7Ad1Wp9aXMQ" name="JComboBox"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FgTfUAJ3EeW7Ad1Wp9aXMQ" name="JButton"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FgtH8AJ3EeW7Ad1Wp9aXMQ" name="JLabel"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FhJM0AJ3EeW7Ad1Wp9aXMQ" name="JScrollPane"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FhgZMAJ3EeW7Ad1Wp9aXMQ" name="JTable"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_FiNj0AJ3EeW7Ad1Wp9aXMQ" name="JTextPane"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Fb0A4AJ3EeW7Ad1Wp9aXMQ" name="ejb">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_Fb0n8AJ3EeW7Ad1Wp9aXMQ" name="FinderException"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Fb3EMQJ3EeW7Ad1Wp9aXMQ" name="security">
+      <packagedElement xmi:type="uml:Package" xmi:id="_Fb3rQAJ3EeW7Ad1Wp9aXMQ" name="auth">
+        <packagedElement xmi:type="uml:Package" xmi:id="_Fb3rQQJ3EeW7Ad1Wp9aXMQ" name="login">
+          <packagedElement xmi:type="uml:DataType" xmi:id="_Fb3rQgJ3EeW7Ad1Wp9aXMQ" name="LoginException"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Fb8jwAJ3EeW7Ad1Wp9aXMQ" name="management">
+      <packagedElement xmi:type="uml:Package" xmi:id="_Fb8jwQJ3EeW7Ad1Wp9aXMQ" name="j2ee">
+        <packagedElement xmi:type="uml:Package" xmi:id="_Fb9K0AJ3EeW7Ad1Wp9aXMQ" name="statistics">
+          <packagedElement xmi:type="uml:DataType" xmi:id="_Fb9K0QJ3EeW7Ad1Wp9aXMQ" name="TimeStatistic"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_FbnMkQJ3EeW7Ad1Wp9aXMQ" name="org">
+    <packagedElement xmi:type="uml:Package" xmi:id="_FbnMkgJ3EeW7Ad1Wp9aXMQ" name="apache">
+      <packagedElement xmi:type="uml:Package" xmi:id="_FbnzoAJ3EeW7Ad1Wp9aXMQ" name="mina">
+        <packagedElement xmi:type="uml:Package" xmi:id="_FbnzoQJ3EeW7Ad1Wp9aXMQ" name="core">
+          <packagedElement xmi:type="uml:Package" xmi:id="_FbnzogJ3EeW7Ad1Wp9aXMQ" name="service">
+            <packagedElement xmi:type="uml:DataType" xmi:id="_FbnzowJ3EeW7Ad1Wp9aXMQ" name="IoHandlerAdapter"/>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_Fbq28wJ3EeW7Ad1Wp9aXMQ" name="IoAcceptor"/>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_Fb12EAJ3EeW7Ad1Wp9aXMQ" name="IoConnector"/>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_Fb12EQJ3EeW7Ad1Wp9aXMQ" name="IoService"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_FboasAJ3EeW7Ad1Wp9aXMQ" name="session">
+            <packagedElement xmi:type="uml:DataType" xmi:id="_FboasQJ3EeW7Ad1Wp9aXMQ" name="IdleStatus"/>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_FboasgJ3EeW7Ad1Wp9aXMQ" name="IoSession"/>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_FbreAAJ3EeW7Ad1Wp9aXMQ" name="filter">
+          <packagedElement xmi:type="uml:Package" xmi:id="_FbreAQJ3EeW7Ad1Wp9aXMQ" name="codec">
+            <packagedElement xmi:type="uml:DataType" xmi:id="_FbreAgJ3EeW7Ad1Wp9aXMQ" name="ProtocolCodecFilter"/>
+            <packagedElement xmi:type="uml:Package" xmi:id="_FbsFEAJ3EeW7Ad1Wp9aXMQ" name="textline">
+              <packagedElement xmi:type="uml:DataType" xmi:id="_FbsFEQJ3EeW7Ad1Wp9aXMQ" name="LineDelimiter"/>
+              <packagedElement xmi:type="uml:DataType" xmi:id="_FbsFEgJ3EeW7Ad1Wp9aXMQ" name="TextLineCodecFactory"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_FbssIAJ3EeW7Ad1Wp9aXMQ" name="transport">
+          <packagedElement xmi:type="uml:Package" xmi:id="_FbssIQJ3EeW7Ad1Wp9aXMQ" name="socket">
+            <packagedElement xmi:type="uml:Package" xmi:id="_FbssIgJ3EeW7Ad1Wp9aXMQ" name="nio">
+              <packagedElement xmi:type="uml:DataType" xmi:id="_FbssIwJ3EeW7Ad1Wp9aXMQ" name="NioSocketAcceptor"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_FbtTMAJ3EeW7Ad1Wp9aXMQ" name="sun">
+    <packagedElement xmi:type="uml:Package" xmi:id="_FbtTMQJ3EeW7Ad1Wp9aXMQ" name="java2d">
+      <packagedElement xmi:type="uml:Package" xmi:id="_FbtTMgJ3EeW7Ad1Wp9aXMQ" name="pipe">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_FbtTMwJ3EeW7Ad1Wp9aXMQ" name="BufferedBufImgOps"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Fb5gcAJ3EeW7Ad1Wp9aXMQ" name="applet">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_Fb5gcQJ3EeW7Ad1Wp9aXMQ" name="Main"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_FbtTNAJ3EeW7Ad1Wp9aXMQ" name="com">
+    <packagedElement xmi:type="uml:Package" xmi:id="_Fbt6QAJ3EeW7Ad1Wp9aXMQ" name="sun">
+      <packagedElement xmi:type="uml:Package" xmi:id="_Fbt6QQJ3EeW7Ad1Wp9aXMQ" name="corba">
+        <packagedElement xmi:type="uml:Package" xmi:id="_Fbt6QgJ3EeW7Ad1Wp9aXMQ" name="se">
+          <packagedElement xmi:type="uml:Package" xmi:id="_Fbt6QwJ3EeW7Ad1Wp9aXMQ" name="impl">
+            <packagedElement xmi:type="uml:Package" xmi:id="_Fbt6RAJ3EeW7Ad1Wp9aXMQ" name="protocol">
+              <packagedElement xmi:type="uml:Package" xmi:id="_FbuhUAJ3EeW7Ad1Wp9aXMQ" name="giopmsgheaders">
+                <packagedElement xmi:type="uml:DataType" xmi:id="_FbuhUQJ3EeW7Ad1Wp9aXMQ" name="IORAddressingInfo"/>
+              </packagedElement>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_Fb6HgAJ3EeW7Ad1Wp9aXMQ" name="spi">
+            <packagedElement xmi:type="uml:Package" xmi:id="_Fb6HgQJ3EeW7Ad1Wp9aXMQ" name="orbutil">
+              <packagedElement xmi:type="uml:Package" xmi:id="_Fb6HggJ3EeW7Ad1Wp9aXMQ" name="fsm">
+                <packagedElement xmi:type="uml:Package" xmi:id="_Fb6HgwJ3EeW7Ad1Wp9aXMQ" name="Guard">
+                  <packagedElement xmi:type="uml:DataType" xmi:id="_Fb6HhAJ3EeW7Ad1Wp9aXMQ" name="Result"/>
+                </packagedElement>
+              </packagedElement>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_Fb6ukAJ3EeW7Ad1Wp9aXMQ" name="org">
+        <packagedElement xmi:type="uml:Package" xmi:id="_Fb6ukQJ3EeW7Ad1Wp9aXMQ" name="apache">
+          <packagedElement xmi:type="uml:Package" xmi:id="_Fb6ukgJ3EeW7Ad1Wp9aXMQ" name="xml">
+            <packagedElement xmi:type="uml:Package" xmi:id="_Fb6ukwJ3EeW7Ad1Wp9aXMQ" name="internal">
+              <packagedElement xmi:type="uml:Package" xmi:id="_Fb7VoAJ3EeW7Ad1Wp9aXMQ" name="serializer">
+                <packagedElement xmi:type="uml:Package" xmi:id="_Fb7VoQJ3EeW7Ad1Wp9aXMQ" name="utils">
+                  <packagedElement xmi:type="uml:DataType" xmi:id="_Fb7VogJ3EeW7Ad1Wp9aXMQ" name="Utils"/>
+                </packagedElement>
+              </packagedElement>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_Fb7VowJ3EeW7Ad1Wp9aXMQ" name="xml">
+        <packagedElement xmi:type="uml:Package" xmi:id="_Fb78sAJ3EeW7Ad1Wp9aXMQ" name="internal">
+          <packagedElement xmi:type="uml:Package" xmi:id="_Fb78sQJ3EeW7Ad1Wp9aXMQ" name="ws">
+            <packagedElement xmi:type="uml:Package" xmi:id="_Fb78sgJ3EeW7Ad1Wp9aXMQ" name="util">
+              <packagedElement xmi:type="uml:DataType" xmi:id="_Fb78swJ3EeW7Ad1Wp9aXMQ" name="UtilException"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_Fe378AJ3EeW7Ad1Wp9aXMQ" name="Throwable"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_Fe80cAJ3EeW7Ad1Wp9aXMQ" name="Object"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_FjEfcAJ3EeW7Ad1Wp9aXMQ" name="AbstractListModel"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_FjFGgAJ3EeW7Ad1Wp9aXMQ" name="ArrayList&lt;Connector>"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_FkA6oAJ3EeW7Ad1Wp9aXMQ" name="ArrayList&lt;Observer>"/>
+</uml:Model>
